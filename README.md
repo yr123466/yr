@@ -1,8 +1,7 @@
 iOS 捷径/插件备份仓库
 
 <div align="center">
-  <img src="https://picsum.photos/id/160/800/200" alt="iOS 捷径插件备份 banner" style="border-radius: 8px; margin-bottom: 20px;">
-  <p>专注 iOS 生态高效工具备份，助力学习交流 </p>
+    <p>专注 iOS 生态高效工具备份，助力学习交流 </p>
 </div>
 
 免责声明
@@ -26,7 +25,7 @@ iOS 捷径/插件备份仓库
 🤝 交流群
 
 扫码或点击链接加入交流群，一起探讨 iOS 捷径开发、插件使用技巧：
-📲 立即进群交流(https://qun.qq.com/universal-share/share?ac=1&authKey=FwVih4ctmVRNBne%2BJjmcQF8yTU5Bs56sh8d2yUwtYsChNljACLJJODSKJMYMja%2BW&busi_data=eyJncm91cENvZGUiOiI0ODM3MDcwNTUiLCJ0b2tlbiI6InhpUVAxcWF0cFRWZzRQKzlaczdPRGRqaStyUFVIRUR5RjArT2ZGbGo4U1lKWmc3VnhNM2huaVpWU1RmZlJ0MUgiLCJ1aW4iOiIzMTc2MjEwODQ2In0%3D&data=vRF7zlZ_DXFZY2bRopTFf87l0FIVns8ja6U_zzpi2MwUx29ezYHWGHuY_mrPwQ57FB75lQsO3MVhIiWeJmlRTw&svctype=4&tempid=h5_group_info)
+#### **[📲 立即进群交流](https://qun.qq.com/universal-share/share?ac=1&authKey=FwVih4ctmVRNBne%2BJjmcQF8yTU5Bs56sh8d2yUwtYsChNljACLJJODSKJMYMja%2BW&busi_data=eyJncm91cENvZGUiOiI0ODM3MDcwNTUiLCJ0b2tlbiI6InhpUVAxcWF0cFRWZzRQKzlaczdPRGRqaStyUFVIRUR5RjArT2ZGbGo4U1lKWmc3VnhNM2huaVpWU1RmZlJ0MUgiLCJ1aW4iOiIzMTc2MjEwODQ2In0%3D&data=vRF7zlZ_DXFZY2bRopTFf87l0FIVns8ja6U_zzpi2MwUx29ezYHWGHuY_mrPwQ57FB75lQsO3MVhIiWeJmlRTw&svctype=4&tempid=h5_group_info)**
 
 <div align="center">
   <p>💡 群内共享更多优质资源，欢迎技术交流、问题探讨</p>
