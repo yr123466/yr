@@ -3,7 +3,7 @@
 [rewrite_local]
 # 替换域名并提取 code
 ^https?:\/\/gate-obt\.nqf\.qq\.com\/prod\/ws url script-request-header
-js链接待补充
+https://raw.githubusercontent.com/yr123466/yr/refs/heads/main/wxcode.js
 
 [mitm]
 hostname = gate-obt.nqf.qq.com
