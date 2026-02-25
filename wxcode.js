@@ -1,24 +1,23 @@
-// 🎯 替换域名 + 提取 code 模块
-if (typeof $request !== 'undefined') {
-  const url = $request.url;
-  // 1. 替换域名
-  const newUrl = url.replace(CONFIG.BASE_URL, CONFIG.TARGET_HOST);
-  // 2. 提取 code
-  const codeMatch = url.match(/code=([^&]+)/);
-  if (codeMatch && codeMatch[1]) {
-    const code = codeMatch[1];
-    $clipboard.set(code);
-    // 先打印日志，确认代码执行到这里
-    console.log("✅ 提取到 code: " + code);
-    // 再尝试弹窗
+// 1. 先替换 URL：把 gate-obt.nqf.qq.com 换成 127.0.0.1
+const originalUrl = $request.url;
+const newUrl = originalUrl.replace("https://gate-obt.nqf.qq.com", "http://127.0.0.1");
+
+// 2. 再从替换后的 URL 里提取 code
+const codeMatch = newUrl.match(/code=([^&]+)/);
+let code = "未找到code";
+
+if (codeMatch && codeMatch[1]) {
+    code = codeMatch[1];
+    // 尝试复制到剪贴板
     try {
-      $notify("✅ NQF Code 提取成功", "已复制到剪贴板", code);
+        $clipboard.set(code);
+        $notify("✅ 先替换后提取成功", "Code: " + code, "已复制到剪贴板");
     } catch (e) {
-      console.log("⚠️ $notify 不可用: " + e.message);
+        console.log("提取到code: " + code);
     }
-  } else {
-    console.log("❌ 未找到 code 参数");
-  }
-  // 3. 返回修改后的请求
-  $done({ url: newUrl });
 }
+
+// 3. 返回修改后的请求
+$done({
+    url: newUrl
+});
