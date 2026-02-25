@@ -1,13 +1,3 @@
-
-
-// ====================== 核心脚本代码 ======================
-const CONFIG = {
-  STORAGE_KEY: 'nqf_code_v1',
-  BASE_URL: 'https://gate-obt.nqf.qq.com',
-  TARGET_HOST: 'http://127.0.0.1',
-  VERSION: '1.0.0'
-};
-
 // 🎯 替换域名 + 提取 code 模块
 if (typeof $request !== 'undefined') {
   const url = $request.url;
@@ -18,7 +8,16 @@ if (typeof $request !== 'undefined') {
   if (codeMatch && codeMatch[1]) {
     const code = codeMatch[1];
     $clipboard.set(code);
-    $notify("✅ NQF Code 提取成功", "已复制到剪贴板", code);
+    // 先打印日志，确认代码执行到这里
+    console.log("✅ 提取到 code: " + code);
+    // 再尝试弹窗
+    try {
+      $notify("✅ NQF Code 提取成功", "已复制到剪贴板", code);
+    } catch (e) {
+      console.log("⚠️ $notify 不可用: " + e.message);
+    }
+  } else {
+    console.log("❌ 未找到 code 参数");
   }
   // 3. 返回修改后的请求
   $done({ url: newUrl });
