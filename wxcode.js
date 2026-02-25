@@ -19,9 +19,19 @@ if (typeof $request !== 'undefined' && $request.url) {
     console.log("❌ 未在新 URL 中匹配到 code 参数");
   }
 
-  // 3️⃣ 返回修改后的请求
+  // 3️⃣ 核心拦截：直接返回本地响应，彻底阻断游戏
   $done({
-    url: newUrl
+    response: {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        code: -1,
+        msg: "Request blocked by script",
+        data: null
+      })
+    }
   });
 } else {
   $done({});
