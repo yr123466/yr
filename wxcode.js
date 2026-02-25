@@ -1,15 +1,4 @@
-/*
-================ Quantumult X 配置块 ================
-[rewrite_local]
-# 替换域名并提取 code
-^https?:\/\/gate-obt\.nqf\.qq\.com\/prod\/ws url script-request-header
-https://raw.githubusercontent.com/yr123466/yr/refs/heads/main/wxcode.js
 
-[mitm]
-hostname = gate-obt.nqf.qq.com
-
-================ 配置结束 ================
-*/
 
 // ====================== 核心脚本代码 ======================
 const CONFIG = {
