@@ -1,4 +1,4 @@
-// ====================== 核心脚本代码（强制修改URL版） ======================
+// ====================== 核心脚本代码（先替换后提取） ======================
 const CONFIG = {
   BASE_URL: 'https://gate-obt.nqf.qq.com',
   TARGET_HOST: 'http://127.0.0.1'
@@ -7,19 +7,20 @@ const CONFIG = {
 if (typeof $request !== 'undefined' && $request.url) {
   const originalUrl = $request.url;
 
-  // 1. 提取 code 并打印日志
-  const codeMatch = originalUrl.match(/code=([^&]+)/);
-  if (codeMatch && codeMatch[1]) {
-    console.log("✅ 提取到 code：" + codeMatch[1]);
-  } else {
-    console.log("❌ 未匹配到 code 参数");
-  }
-
-  // 2. 强制替换域名，生成新的 URL
+  // 1️⃣ 先替换域名，生成新 URL
   const newUrl = originalUrl.replace(CONFIG.BASE_URL, CONFIG.TARGET_HOST);
   console.log("🔄 URL 已修改为：" + newUrl);
 
-  // 3. 核心：返回修改后的 URL，确保 QX 执行
+  // 2️⃣ 再从替换后的新 URL 中提取 code
+  const codeMatch = newUrl.match(/code=([^&]+)/);
+  if (codeMatch && codeMatch[1]) {
+    const code = codeMatch[1];
+    console.log("✅ 从新 URL 提取到 code：" + code);
+  } else {
+    console.log("❌ 未在新 URL 中匹配到 code 参数");
+  }
+
+  // 3️⃣ 返回修改后的请求，确保 QX 执行替换
   $done({
     url: newUrl
   });
